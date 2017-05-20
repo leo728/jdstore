@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
  gem "carrierwave"
  gem "mini_magick"
  gem 'letter_opener', group: :development
+ gem 'aasm'
 
  gem 'ransack'
  gem 'will_paginate'
