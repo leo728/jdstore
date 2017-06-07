@@ -1,3 +1,19 @@
+<script>
+function a(title)
+{
+  alert(title) ;
+}
+
+$('.specific_service').click(function() {
+  var id = $(this).data('id1');
+
+  alert(id) ;
+  event.stop();
+
+  // now do something with the id
+});
+</script>
+
 <div class="row">
   <div class="col-md-6">
     <% if @product.image.present? %>
@@ -7,7 +23,7 @@
     <% end %>
   </div>
   <div class="col-md-6">
-    <h2> <%= @product.title %> </h2>
+    <h2 id = "t1"> <%= @product.title %> </h2>
     <div style="height:100px;">
       <p>
         <%= @product.description %>
@@ -17,7 +33,9 @@
     <div class="product-price"> ￥ <%= @product.price %> </div>
     <div class="pull-right">
       <% if @product.quantity.present? && @product.quantity > 0 %>
-        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+        <%#= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger", :onclick => 'a("@product.title")') %>
+        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger", :class => 'specific_service', :data => {:id1 => @product.title}) %>
+        <%#= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger", @product.title => 'specific_service') %>
       <% else %>
         已销售一空，无法购买
       <% end %>

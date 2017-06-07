@@ -50,5 +50,6 @@ Rails.application.routes.draw do
     resources :orders
   end
 
-  root 'products#index'
+  # root 'products#index'
+  root 'welcome#index'
 end

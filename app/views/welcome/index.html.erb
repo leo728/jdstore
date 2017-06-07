@@ -1,141 +1,141 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-<!-- <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>红色主题的jQuery电子商务二级下拉菜单DEMO演示</title> -->
+<div class="welcome-box">
+  <!--===== 广告轮播 =====-->
+  <section class="intro-box">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="intro" class="carousel slide" data-ride="carousel">
+          <!--===== 轮播按钮 =====-->
+          <ol class="carousel-indicators">
+            <li data-target="#intro" data-slide-to="0" class="active"></li>
+            <li data-target="#intro" data-slide-to="1"></li>
+            <li data-target="#intro" data-slide-to="2"></li>
+          </ol>
 
-<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
-
-</head>
-<body>
-<div style="text-align:center;clear:both;">
-<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
-<script src="/follow.js" type="text/javascript"></script>
-</div>
-<div class="header-wrap">
-	<div class="navwrap">
-		<div id="nav">
-			<div class="navbar clearfix">
-				<a class="navbt" href="#"><span>团购地图</span></a>
-				<a class="current" href="#">首页</a>
-				<a href="#">餐饮美食</a>
-				<a href="#">休闲娱乐</a>
-				<a href="#">旅游住宿</a>
-				<a href="#">生活服务</a>
-				<a href="#">丽人</a>
-				<a href="#">商品</a>
-			</div>
-			<div class="pros subpage">
-				<h2>全部团购分类</h2>
-				<ul class="prosul clearfix" id="proinfo">
-					<li class="food">
-						<i>&gt;</i>
-						<a class="ti" href="#">美食</a>
-						<a class="hot" href="#">地方菜</a>
-						<a href="#">火锅</a>
-						<div class="prosmore hide">
-							<span><em><a href="#">全部(117)</a></em></span>
-							<span><em class="morehot"><a class="morehot" href="#">火锅(17)</a></em></span>
-							<span><em class="morehot"><a class="morehot" href="#">烧烤(16)</a></em></span>
-							<span><em><a href="#">西餐(9)</a></em></span>
-							<span><em><a href="#">海鲜(37)</a></em></span>
-							<span><em><a href="#">地方菜(5)</a></em></span>
-							<span><em><a href="#">日韩料理(2)</a></em></span>
-							<span><em><a href="#">快餐(2)</a></em></span>
-							<span><em class="morehot"><a class="morehot" href="#">蛋糕(9)</a></em></span>
-							<span><em><a href="#">其他(7)</a></em></span>
-							<span><em><a href="#">下午茶(5)</a></em></span>
-							<span><em><a href="#">咖啡(8)</a></em></span>
-						</div>
-					</li>
-					<li class="enjoy">
-						<i>&gt;</i>
-						<a class="ti" href="#">休闲</a>
-						<a class="hot" href="#">电影</a>
-						<a href="#">KTV</a>
-						<div class="prosmore hide">
-							<span><em><a href="#">全部(663)</a></em></span>
-							<span><em class="morehot"><a class="morehot" href="#">电影(18)</a></em></span>
-							<span><em class="morehot"><a class="morehot" href="#">KTV(8)</a></em></span>
-							<span><em><a href="#">运动健身(95)</a></em></span>
-							<span><em><a href="#">游乐电玩(48)</a></em></span>
-							<span><em><a href="#">展览演出(13)</a></em></span>
-							<span><em class="morehot"><a class="morehot" href="#">足疗按摩(8)</a></em></span>
-							<span><em><a href="#">洗浴(11)</a></em></span>
-							<span><em><a href="#">其他(29)</a></em></span>
-							<span><em><a href="#">采摘(2)</a></em></span>
-							<span><em><a href="#">滑雪(4)</a></em></span>
-							<span><em><a href="#">温泉(427)</a></em></span>
-						</div>
-					</li>
-
-					<li class="goods bd-solid">
-            <% @classfication_pris.each do |classfication_pri| %>
-              <li>
-                <i>></i>
-                <a class="ti" href="#"><%= classfication_pri.title %></a>
-                <div class="prosmore hide">
-                  <% classfication_subs = ClassficationSub.where( :classfication_pri_id => classfication_pri.id ) %>
-
-                  <% classfication_subs.each do |classfication_sub| %>
-                    <span><em><a href="#"><%= classfication_sub.title %></a></em></span>
-                  <% end %>
+          <!--===== 轮播内容 =====-->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <%= link_to '#', target: "_blank" do %> <!-- 图片连结，点击另开视窗 -->
+                <%= image_tag("https://ws2.sinaimg.cn/large/006tNc79ly1fgcs65nhz2j31680jstgt.jpg") %> <!-- 图片位置 -->
+                <div class="carousel-caption">
+                  <h3>潜水体验</h3> <!-- 标题 -->
+                  <p>如鱼得水，激情无限</p> <!-- 内文 -->
                 </div>
+              <% end %>
+            </div>
+            <div class="item">
+              <%= link_to '#', target: "_blank" do %>
+                <%= image_tag("https://ws3.sinaimg.cn/large/006tNc79ly1fgd1ulxc9xj31400iq0yp.jpg") %>
+                <div class="carousel-caption">
+                  <h3>船宿旅行</h3>
+                  <p>精彩纷呈，意犹未尽</p>
+                </div>
+              <% end %>
+            </div>
+            <div class="item">
+              <%= link_to '#', target: "_blank" do %>
+                <%= image_tag("https://ws4.sinaimg.cn/large/006tNc79ly1fgd1sg9d2xj31680jsae5.jpg") %>
+                <div class="carousel-caption">
+                  <h3>浅海拾贝</h3>
+                  <p>物件虽小，意义无穷</p>
+                </div>
+              <% end %>
+            </div>
+          </div>
 
-              </li>
-            <% end %>
-					</li>
+          <!--===== 换页按钮 =====-->
+          <a class="left carousel-control" href="#intro" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span> <!-- 左侧按钮图示 -->
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#intro" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span> <!-- 右侧按钮图示 -->
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-				</ul>
-			</div>
-		</div>
-	</div>
+  <!--===== 品牌故事 =====-->
+  <section class="story-box">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>品牌故事</h2> <!-- 区块标题 -->
+        <h1>潜水的节拍</h1> <!-- 品牌名称 -->
+        <div class="short-line"></div> <!-- 分隔线 -->
+        <div class="row">
+          <div class="col-md-3 col-md-offset-1">
+            <%= image_tag("founder.jpg") %> <!-- 创办人头像 1 -->
+          </div>
+          <div class="col-md-7">
+            <h3>节拍</h3> <!-- 创办人姓名 -->
+            <p>一天到晚游泳的魚啊！魚不停游。<br/>原谅我这一生不羁放纵爱自由。<br/>体验不一样的旅程，让我一次玩个够。<br/>生活的精彩，一个都不能漏。 </p> <!-- 创办人介绍 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 商品類型 =====-->
+  <section class="categories-box">
+    <div class="row">
+      <div class="col-md-4 category-content">
+        <%= link_to 'https://j-and-a-select.herokuapp.com/products?group=%E6%97%A5%E5%B8%B8%E6%96%87%E5%85%B7' , class: "category_1" do %>
+          <div class="category-box">
+            <%= image_tag("category_1.jpg") %>
+          </div>
+          <div>
+            <h3><%= t('th-desk') %></h3>
+            <p><%= t('slogan-desk') %></p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 category-content">
+        <%= link_to 'https://j-and-a-select.herokuapp.com/products?group=%E7%94%9F%E6%B4%BB%E5%99%A8%E7%89%A9' , class: "category_2" do %>
+          <div class="category-box">
+            <%= image_tag("category_2.jpg") %>
+          </div>
+          <div>
+            <h3><%= t('th-home') %></h3>
+            <p><%= t('slogan-home') %></p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 category-content">
+        <%= link_to 'https://j-and-a-select.herokuapp.com/products?group=%E5%80%8B%E4%BA%BA%E5%96%AE%E5%93%81' , class: "category_3" do %>
+          <div class="category-box">
+            <%= image_tag("category_3.jpg") %>
+          </div>
+          <div>
+            <h3><%= t('th-accessories') %></h3>
+            <p><%= t('slogan-accessories') %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 合作品牌 =====-->
+  <section class="brand-box">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>合作品牌</h2> <!-- 副标题 -->
+        <div class="short-line"></div> <!-- 分隔线 -->
+        <%= image_tag("brand_1.png") %> <!-- 品牌图片 -->
+        <%= image_tag("brand_2.png") %>
+        <%= image_tag("brand_3.png") %>
+        <%= image_tag("brand_4.png") %>
+        <%= image_tag("brand_5.png") %>
+        <%= image_tag("brand_6.png") %>
+        <%= image_tag("brand_7.png") %>
+        <%= image_tag("brand_8.png") %>
+        <%= image_tag("brand_9.png") %>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 立即购买 =====-->
+  <section class="push-box">
+    <%= link_to('立即购买', '#', class:'btn btn-push' ) %>
+  </section>
 </div>
-
-<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-	(function(){
-
-		var $subblock = $(".subpage"), $head=$subblock.find('h2'), $ul = $("#proinfo"), $lis = $ul.find("li"), inter=false;
-
-		$head.click(function(e){
-			e.stopPropagation();
-			if(!inter){
-				$ul.show();
-			}else{
-				$ul.hide();
-			}
-			inter=!inter;
-		});
-
-		$ul.click(function(event){
-			event.stopPropagation();
-		});
-
-		$(document).click(function(){
-			$ul.hide();
-			inter=!inter;
-		});
-
-		$lis.hover(function(){
-			if(!$(this).hasClass('nochild')){
-				$(this).addClass("prosahover");
-				$(this).find(".prosmore").removeClass('hide');
-			}
-		},function(){
-			if(!$(this).hasClass('nochild')){
-				if($(this).hasClass("prosahover")){
-					$(this).removeClass("prosahover");
-				}
-				$(this).find(".prosmore").addClass('hide');
-			}
-		});
-
-	})();
-</script>
-
-
-</body>
-</html>
